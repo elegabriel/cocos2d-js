@@ -46,6 +46,7 @@ var MyActionLayer = cc.Layer.extend({
         switch(this.flagTag){
             case ActionTypes.kExplosion:
                 system = new cc.ParticleExplosion();
+                system.texture = cc.textureCache.addImage(res.s_fire);
                 this.pLable.setString("Explosion");
                 break;
             case ActionTypes.kFire:
@@ -65,7 +66,7 @@ var MyActionLayer = cc.Layer.extend({
                 break;
             case ActionTypes.kGalaxy:
                 system = new cc.ParticleGalaxy();
-                system.texture = cc.textureCache.addImage(res.s_fire);
+                system.texture = cc.textureCache.addImage(res.s_stars);
                 this.pLable.setString("Galaxy");
                 break;
             case ActionTypes.kMeteor:
@@ -90,10 +91,12 @@ var MyActionLayer = cc.Layer.extend({
                 break;
             case ActionTypes.kSpiral:
                 system = new cc.ParticleSpiral();
+                system.texture = cc.textureCache.addImage(res.s_fire);
                 this.pLable.setString("Spiral");
                 break;
             case ActionTypes.kSun:
                 system = new cc.ParticleSun();
+                system.texture = cc.textureCache.addImage(res.s_fire);
                 this.pLable.setString("Sun");
                 break;
         }
